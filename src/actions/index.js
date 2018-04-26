@@ -2,7 +2,7 @@ import { FETCH_COURSES } from './types';
 
 export function fetchCourses() {
     return {
-        type: 'fetch_courses',
+        type: FETCH_COURSES,
         payload: [
             {
                 'title': 'Up and Running with Redis',

@@ -40,7 +40,6 @@ class CourseLibrary extends Component {
             </ul>
         )
     }
-
 }
 
 function mapStateToProps(state) {
