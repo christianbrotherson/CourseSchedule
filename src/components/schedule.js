@@ -25,9 +25,7 @@ class Schedule extends Component {
         return (
             <div>
                 <div className="schedule-slots">
-                    {
-                        this.props.courses.map(this.renderCourse)
-                    }
+                    { this.props.courses.map(this.renderCourse) }
                 </div>
             </div>
         )
@@ -38,5 +36,6 @@ class Schedule extends Component {
 function mapStateToProps(state) {
     return { courses: state.courses };
 }
+
 
 export default connect(mapStateToProps)(Schedule);
