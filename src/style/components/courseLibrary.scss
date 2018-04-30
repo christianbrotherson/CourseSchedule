@@ -120,3 +120,12 @@
         transform: translate(-50%, -50%) rotate(-45deg);
     }
 }
+
+.slot-remove {
+    @include add-button;
+    transform: translateY(-50%) rotate(45deg);
+    display: inline-block;
+    position: absolute;
+    right: 13px;
+    top: 50%;
+}
