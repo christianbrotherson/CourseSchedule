@@ -16,7 +16,7 @@ class Schedule extends Component {
 
     renderCourse(course) {
         return (
-            <div key={this.props.courses.indexOf(course)} className={`slot ${course.enrolled ? 'slot-course' : 'slot-empty'}`}>
+            <div key={this.state.enrolled.indexOf(course)} className={`slot ${course.enrolled ? 'slot-course' : 'slot-empty'}`}>
                 <div className="slot-title">{course.enrolled ? course.title : 'Empty Slot'}</div>
                 <a className={`action slot-remove`} onClick={() => this.props.removeCourse(course)}>Remove Course</a>
             </div>
@@ -28,18 +28,19 @@ class Schedule extends Component {
 
         this.state.enrolled.map((course) => {
             if (course.enrolled) {
-                console.log(course.title);
                 newEnrolled.push(course)
             }
         })
-        
+
         nextProps.courses.map((course) => {
-            
             if (course.enrolled && !newEnrolled.includes(course)) {
-                console.log(course.title);
                 newEnrolled.push(course)
             }
         })
+
+        for (var i = newEnrolled.length; i < 5; i++) {
+            newEnrolled.push({enrolled: false})
+        }
 
         this.setState({
             enrolled: newEnrolled
@@ -50,11 +51,8 @@ class Schedule extends Component {
         return (
             <div>
                 <div className="schedule-slots">
-                    { 
-                        // ordering 
+                    {                         
                         
-                        // empty slots
-
                         this.state.enrolled.map(this.renderCourse) 
                     }
                 </div>
