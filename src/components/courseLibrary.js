@@ -18,7 +18,7 @@ class CourseLibrary extends Component {
 
     renderCourse(course) {
         return (
-            <li key={course.title} className="course">
+            <li key={course.title} className={`course ${course.open ? 'course-selected' : null}`}>
                 <div className="course-info">
                     <div className="course-title-container">
                         <div className="course-title">{course.title}</div>
