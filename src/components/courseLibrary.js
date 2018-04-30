@@ -30,7 +30,7 @@ class CourseLibrary extends Component {
 
                 <AnimateHeight
                     duration={300}
-                    height={ course.open ? 'auto' : '0' } // see props documentation bellow
+                    height={ course.open ? 'auto' : '0' }
                 >    
                     <div className={`course-description`}>
                         <h6 className="course-description-title">Course Description</h6>
@@ -53,7 +53,6 @@ class CourseLibrary extends Component {
 }
 
 function mapStateToProps(state) {
-    // console.log(`state courses are: ${JSON.stringify(state.courses)}`);
     return { courses: state.courses }
 }
 
