@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect, dispatch } from 'react-redux';
-import { fetchCourses } from '../actions'
+import { fetchCourses, addCourse } from '../actions'
 
 class CourseLibrary extends Component {
 
@@ -22,6 +22,9 @@ class CourseLibrary extends Component {
                     <div className="course-title-container">
                         <div className="course-title">{course.title}</div>
                     </div>
+                    <a>Arrow</a>
+                    <a className={`action ${course.enrolled ? 'hide-content' : 'show-content'}`} onClick={() => this.props.addCourse(course)}>Add</a>
+                    <a className={`action ${course.enrolled ? 'show-content' : 'hide-content'}`} onClick={() => this.props.removeCourse(course)}>Remove</a>
                 </div>
                 <div className="course-description">
                     <h6 className="course-description-title">Course Description</h6>
@@ -51,6 +54,12 @@ function mapDispatchToProps(dispatch) {
     return {
         fetchCourses:()=> {
             dispatch(fetchCourses())
+        },
+        addCourse:(course)=> {
+            dispatch(addCourse(course))
+        },
+        removeCourse:(course)=> {
+            dispatch(removeCourse(course))
         }
     }
 }
