@@ -9,7 +9,7 @@
 
 .library {
     flex-grow: 2;
-    height: 100vh;
+    height: 100%;
     width: 62%;
     padding: 6rem;
     z-index: 1;
@@ -17,7 +17,7 @@
 
 .schedule {
     flex-grow: 1;
-    height: 100vh;
+    height: 100%;
     width: 38%;
     background: linear-gradient(118.95deg, #6F48CE 0%, #32CBE8 100%);
     text-align: center;
